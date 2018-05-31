@@ -1,0 +1,80 @@
+1.Scanner的使用
+	system.in:标准的输入流，对应于键盘录入。
+2.String类的概述和使用
+	可以和字符数组进行相互转换：String.toCharArray()方法可以把字符串转成字符数组;
+	构造方法：
+		public String（）
+		public String（byte[] bytes）
+		public String（byte[] bytes, int offset, int length）
+		public String（char[] value）
+		public String（char[] value, int offset, int length）
+		public String(String original)
+	特点：
+		字符串一旦被赋值，就不能改变；这里指的是字符串的内容不能改变，而不是引用不能改变；
+		字面值作为字符串对象和通过构造方法创建对象的不同；构造方法比字面值在堆中多创建了一个对象；
+	面试题：
+		==和equals（）的区别：==比较引用类型的地址值，equals比较引用类型的值
+	功能：
+		判断功能：
+		获取功能：
+		转换功能：
+		其他功能：
+			替换功能：replace
+			去除空格功能：trim（）
+3.StringBuffer：字符串缓冲区类
+	构造方法：
+		StringBuffer（）
+		StringBuffer（int size）
+		StringBuffer(String str)
+	功能：
+		添加功能：add()
+		删除功能:delete()
+		替换功能:replace()
+		反转功能:reverse()
+		截取功能（这个返回值是String）
+	与String的相互转换：
+		String--StringBuffer
+			构造方法
+		StringBuffer--String
+			toString（）方法
+	面试题
+		String和StringBuffer和StringBuilder的区别
+		String
+		StringBuffer:同步的，数据安全，效率低
+		Stringbuilder：不同步的，数据不安全，效率高
+	注意：
+		String作为形式参数
+		StringBuffer作为形式参数--类似引用类型
+
+4.数组高级及Arrays
+	冒泡排序：
+	public static void bubbleSort(int[] arr){
+		for(int x = 0; x < arr.length-1; x++){
+			for(int y = 0; y < arr.length-1-x;y++){
+				if(arr[y] > arr[y+1]){
+					int temp = arr[y];
+					arr[y] = arr[y+1];
+					arr[y+1] = temp;
+				}
+			}
+		}
+		System.out.println(arr);
+	}
+	选择排序：
+	public static void selectSort(int[] arr){
+		for(int x = 0; x < arr.length-1; x++){
+			for(int y = x+1; y < arr.length;y++){
+				if(arr[y] < arr[x]){
+					int temp = arr[x];
+					arr[x] = arr[y];
+					arr[y] = temp;
+				}
+			}
+		}
+		System.out.println(arr);
+	}
+	查找：
+		基本查找：针对数组无序的情况，
+		二分查找：针对数组有序的情况
+5.Integer
+6.Character
